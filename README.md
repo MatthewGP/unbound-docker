@@ -1,7 +1,8 @@
 # Unbound DNS Server Docker Image
 
 ## Supported tags and respective `Dockerfile` links
-- [`1.22.0`, `latest` (*1.22.0/Dockerfile*)](https://github.com/MatthewVance/unbound-docker/tree/master/1.22.0)
+- [`1.23.0`, `latest` (*1.23.0/Dockerfile*)](https://github.com/MatthewVance/unbound-docker/tree/master/1.23.0)
+- [`1.22.0`, (*1.22.0/Dockerfile*)](https://github.com/MatthewVance/unbound-docker/tree/master/1.22.0)
 - [`1.21.1`, (*1.21.1/Dockerfile*)](https://github.com/MatthewVance/unbound-docker/tree/master/1.21.1)
 - [`1.21.0`, (*1.21.0/Dockerfile*)](https://github.com/MatthewVance/unbound-docker/tree/master/1.21.0)
 - [`1.20.0`, (*1.20.0/Dockerfile*)](https://github.com/MatthewVance/unbound-docker/tree/master/1.20.0)
@@ -40,13 +41,13 @@ docker run \
 mvance/unbound:latest
 ```
 
-By default, this image forwards queries Cloudflare DNS server over TLS. In other words, it does not act as a recursive server. The [unbound.sh file](1.17.0/data/unbound.sh) provides the configuration unless it is overriden as described below.
+By default, this image forwards queries Cloudflare DNS server over TLS. In other words, it does not act as a recursive server. The [unbound.sh file](1.23.0/data/unbound.sh) provides the configuration unless it is overriden as described below.
 
-*Note: The example [unbound.conf](unbound.conf) file is different from the one set by [unbound.sh file](1.17.0/data/unbound.sh). The example is provided to help you re-configure this as a [recursive server](https://github.com/MatthewVance/unbound-docker#recursive-config).*
+*Note: The example [unbound.conf](unbound.conf) file is different from the one set by [unbound.sh file](1.23.0/data/unbound.sh). The example is provided to help you re-configure this as a [recursive server](https://github.com/MatthewVance/unbound-docker#recursive-config).*
 
 ### Override default forward
 
-By default, forwarders are configured to use Cloudflare DNS. You can retrieve the configuration in the [forward-records.conf](1.17.0/data/opt/unbound/etc/unbound/forward-records.conf) file.
+By default, forwarders are configured to use Cloudflare DNS. You can retrieve the configuration in the [forward-records.conf](1.23.0/data/opt/unbound/etc/unbound/forward-records.conf) file.
 
 You can create your own configuration file and override the one placed in `/opt/unbound/etc/unbound/forward-records.conf` in the container. This is useful if you prefer to use something other than Cloudflare DNS but do not want to provide a custom unbound.conf file.
 
